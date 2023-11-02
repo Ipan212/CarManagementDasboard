@@ -1,0 +1,50 @@
+<%- include('partial/navbar.ejs') %>
+<div class="bg-binar"style="margin-left: 250px; padding-left: 50px;">
+    <nav style="
+              --bs-breadcrumb-divider: url(
+                &#34;data:image/svg + xml,
+                %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='currentColor'/%3E%3C/svg%3E&#34;
+              );
+            " aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Cars</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">List Car</li>
+                </ol>
+   </nav>
+        <div class="add d-flex justify-content-between "style ="width : 100%;">
+                <h5 class="textList mb-0 fw-bold fs-4 ">Add New Car</h5>
+                
+              </div>
+  
+  <form action="/mobil/tambah" method="post" >
+    
+    <div class="mb-3 row">
+      <label for="name"  class="col-sm-2 col-form-label">Name :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="price"  class="col-sm-2 col-form-label">Harga :</label>
+      <div class="col-5 ">
+        <input type="number" class="form-control" id="price" name="price" required>
+      </div>
+    </div>
+     <div class="mb-3 row">
+      <label for="category"  class="col-sm-2 col-form-label">Harga :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="category" name="category" required>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="images"  class="col-sm-2 col-form-label">Url Gambar :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="images" name="images" required>
+      </div>
+    </div>
+    <button type="submit">Tambah</button>
+  </form>
+  <a href="/mobil">Kembali ke Daftar Mobil</a>
+  
+</body>
+</html>

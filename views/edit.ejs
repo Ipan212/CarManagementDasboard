@@ -1,0 +1,61 @@
+<%- include('partial/navbar.ejs') %>
+<div class="bg-binar">
+    <nav style=" padding-left: 20rem;
+              --bs-breadcrumb-divider: url(
+                &#34;data:image/svg + xml,
+                %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='currentColor'/%3E%3C/svg%3E&#34;
+              );
+            " aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Cars</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">List Car</li>
+                </ol>
+   </nav>
+        <div class="add d-flex justify-content-between "style ="width : 100%;">
+                <h5 class="textList mb-0 fw-bold fs-4 "style="padding-left: 20rem;">List Car</h5>
+                <a href="/mobil/tambah" type="button" class=" btn btnAdd btn-primary btn-binar-primary gap-1  ">
+                    <img src="/images/fi_plus.svg" alt="..." />
+                    Tambah mobil
+                </a>
+              </div>
+
+  <h1>Edit Mobil</h1>
+  <form action="/mobil/edit/<%= mobil.id %>" method="post" style="padding-left: 20rem;">
+    <div class="mb-3 row">
+      <label  class="col-sm-2 col-form-label">Name :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="name" name="name" value="<%= mobil.name %>">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label  class="col-sm-2 col-form-label">Harga :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="price" name="price" value="<%= mobil.price %>">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label  class="col-sm-2 col-form-label">Category :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="category" name="category" value="<%= mobil.category %>">
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label  class="col-sm-2 col-form-label">Url Gambar :</label>
+      <div class="col-5 ">
+        <input type="text" class="form-control" id="images" name="images" value="<%= mobil.images %>">
+      </div>
+    </div>
+  
+  <!-- Tombol submit -->
+
+     <!-- <label for="images">URL Gambar:</label>
+     
+    <input type="text" id="images" name="images" value="<%= mobil.images %>" required><br> -->
+    <button class="btn btnAdd btn-primary btn-binar-primary" style="margin-right: 10px;" type="submit">Simpan Perubahan</button>
+    <a class="btn btnAdd btn-info btn-binar-info " style="margin-left: 0;" href="/mobil">Kembali ke Daftar Mobil</a>
+  </form>
+  
+</div>
+ 
+</body>
+</html>

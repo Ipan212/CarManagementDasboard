@@ -1,0 +1,94 @@
+<%- include('partial/navbar.ejs') %>
+<div class="bg-binar" style="margin-left: 250px; padding-left: 50px;">
+  <div class="container py-4">
+<nav style="
+              --bs-breadcrumb-divider: url(
+                &#34;data:image/svg + xml,
+                %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='currentColor'/%3E%3C/svg%3E&#34;
+              );
+            " aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Cars</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">List Car</li>
+                </ol>
+   </nav>
+        <div class="add d-flex justify-content-between "style ="width : 100%;">
+                <h5 class="textList mb-0 fw-bold fs-4 ">List Car</h5>
+                <a href="/mobil/tambah" type="button" class=" btn btnAdd btn-primary btn-binar-primary gap-1  ">
+                    <img src="../images/fi_plus.svg" alt="..." />
+                    Add New Car
+                </a>
+              </div>
+           
+            <div class="d-flex align-items-center gap-3 mt-3 ">
+                <button type="button" class="btn btn-outline-secondary active">All</button>
+                <button type="button" class="btn btn-outline-secondary">Small</button>
+                <button type="button" class="btn btn-outline-secondary">Medium</button>
+                <button type="button" class="btn btn-outline-secondary">Large</button>
+            </div>
+  <div class="row mt-4" id="cars-container ">
+    <% mobilList.forEach(mobil => { %>
+        <div class="col-md-4 mb-4">
+            <div class="card p-2 w-100 shadow p-3">
+                
+                <div class="card-body cardCar " style = "width : 400px; border-radius: 20px;">
+                  <img class="card-img-top   align-items-center justify-content-center " style = "width : 220px; border-radius: 20px;" src="<%= mobil.images %>" alt="<%= mobil.name %>"><br>
+                <div class="textTable">
+                  <h6 class="card-text mb-3"><%=mobil.name%></h6>
+                    <h4 class="card-title fw-bolder mb-4">Rp.<%= mobil.price%>/Hari</h4>
+                    <h4 class="card-title fw-bolder mb-4"><%= mobil.category%></h4>
+                  </div>
+                <div class="d-flex gap-2 mt-5"> 
+                    <div class="w-20 h-15 ">
+                        <form action="/delete?_method=DELETE" method="POST">
+                            <button type="button" class="py-3 btn btn-outline-danger btn-binar-danger d-flex align-items-center justify-content-center gap-1 w-100"
+                                data-toggle="modal" data-target="#confirmDeleteModal<%= mobil.id %>">
+                                <img src="/images/fi_trash-2.svg" />
+                                  Hapus
+                                    </button>
+                                    <div class="modal fade" id="confirmDeleteModal<%= mobil.id %>" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel<%= mobil.id %>" aria-hidden="true">
+                                      <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                          <div class="modal-header">
+                                            <image class="mx-auto" src="images/img-BeepBeep.svg"
+                            height="121px" />
+                                            <h5 class="modal-title" id="confirmDeleteModalLabel<%= mobil.id %>">Konfirmasi Penghapusan</h5>
+                                            <button type="button" class="close bg-light border-0 " data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">&times;</span>
+                                            </button>
+                                          </div>
+                                          <div class="modal-body fw-light">
+                                            Setelah dihapus, data mobil tidak dapat dikembalikan. Yakin
+                                             ingin menghapus?
+                                          </div>
+                                          <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                            <a href="/mobil/hapus/<%= mobil.id %>" class="btn btn-danger">Hapus</a>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                            </form>
+                            
+                    </div>
+                    <div class="w-20 h-15" >
+                        <a href="/mobil/edit/<%= mobil.id %>" type="button" id="editCar" class=" py-3 btn btn-success btn-binar-success d-flex align-items-center justify-content-center gap-1 w-100">
+                        <img src="/images//fi_edit.svg" alt="..." />
+                            Edit
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+ 
+</div>
+  </div>
+</div>
+<!-- Modal Konfirmasi Penghapusan -->
+<!-- Add Bootstrap JavaScript and Popper.js (if needed) links -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
