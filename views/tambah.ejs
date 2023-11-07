@@ -6,17 +6,17 @@
                 %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='currentColor'/%3E%3C/svg%3E&#34;
               );
             " aria-label="breadcrumb">
-                <ol class="breadcrumb">
+                <ol class="breadcrumb mt-4 ">
                     <li class="breadcrumb-item"><a href="index.html">Cars</a></li>
                     <li class="breadcrumb-item active" aria-current="page">List Car</li>
                 </ol>
    </nav>
-        <div class="add d-flex justify-content-between "style ="width : 100%;">
+        <div class="add d-flex justify-content-between mb-3 "style ="width : 100%;">
                 <h5 class="textList mb-0 fw-bold fs-4 ">Add New Car</h5>
                 
               </div>
   
-  <form action="/mobil/tambah" method="post" >
+  <form action="/mobil/tambah" method="POST" enctype="multipart/form-data" >
     
     <div class="mb-3 row">
       <label for="name"  class="col-sm-2 col-form-label">Name :</label>
@@ -31,20 +31,20 @@
       </div>
     </div>
      <div class="mb-3 row">
-      <label for="category"  class="col-sm-2 col-form-label">Harga :</label>
+      <label for="category"  class="col-sm-2 col-form-label">Category :</label>
       <div class="col-5 ">
         <input type="text" class="form-control" id="category" name="category" required>
       </div>
     </div>
-    <div class="mb-3 row">
-      <label for="images"  class="col-sm-2 col-form-label">Url Gambar :</label>
-      <div class="col-5 ">
-        <input type="text" class="form-control" id="images" name="images" required>
+    
+    <div class="mb-3">
+        <label for="images" class="form-label">Gambar</label>
+        <input type="file" class="form-control" id="images" name="images" accept="image/*" required>
       </div>
-    </div>
-    <button type="submit">Tambah</button>
+      
+    <button class="btn btnAdd btn-primary btn-binar-primary" style="margin-right: 10px;" type="submit">Tambah Data</button>
+    <button class="btn btn-info  btn-binar-info" style="margin-right: 10px;" type="submit"><a href="/mobil">Kembali ke Daftar Mobil</a></button>
   </form>
-  <a href="/mobil">Kembali ke Daftar Mobil</a>
   
 </body>
 </html>
