@@ -26,12 +26,12 @@
       <button type="button" class="btn btn-outline-secondary" data-category="Medium">Medium</button>
       <button type="button" class="btn btn-outline-secondary" data-category="Large">Large</button>
     </div>
-    <div class="row mt-4" id="cars-container">
+    <div class="row mt-4 m-4" id="cars-container">
       <% mobilList.forEach(mobil => { %>
         <div class="mobil col-md-4 mb-4">
           <div class="card p-2 shadow p-3" style="width: 18rem;">
             <div class="card-body cardCar" style="width: 18rem; height: 400px; border-radius: 20px;">
-              <img class="card-img-top align-items-center justify-content-center" style="width: 220px; border-radius: 20px;" src="/<%= mobil.images %>" alt="<%= mobil.name %>">
+              <img class="card-img-top align-items-center justify-content-center" style="width: 220px; border-radius: 20px;" src="<%= mobil.images %>" alt="<%= mobil.name %>">
 
               <div class="textTable">
                 <p class="card-text fw-bold mb-2 "><%= mobil.name %></p>

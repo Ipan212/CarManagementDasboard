@@ -7,11 +7,11 @@ const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'public/uploads'); // Ganti dengan direktori yang sesuai dengan proyek Anda
+    cb(null, 'uploads'); // Ganti dengan direktori yang sesuai dengan proyek Anda
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, file.fieldname + '-' + uniqueSuffix + '-' + file.originalname);
+    cb(null, uniqueSuffix + '-' + file.originalname);
   },
 });
 
@@ -20,8 +20,9 @@ const upload = multer({ storage: storage });
 // Konfigurasi view engine untuk menggunakan EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+//menjadikan sebuah direkctory bisa di akses dimana saja
 app.use(express.static(path.join(__dirname, "/public")))
-
+app.use(express.static(path.join(__dirname, "/uploads")))
 
 // Middleware untuk mengurai body permintaan JSON
 app.use(bodyParser.json());
@@ -53,23 +54,35 @@ app.get('/mobil/tambah', (req, res) => {
 // Rute untuk menangani penambahan data mobil
 app.post('/mobil/tambah', upload.single('images'), async (req, res) => {
   try {
-    const { name, price, category } = req.body;
-    const imagePath = req.file.path; // Lokasi gambar yang diunggah
+    const { name, price, category, uploadType, imageUrl } = req.body;
+    let imagePath;
 
-    // Simpan data mobil dan lokasi gambar ke dalam database
+    if (uploadType === 'file') {
+      imagePath = req.file.filename;
+    } else if (uploadType === 'url') {
+      // Validasi URL gambar, pastikan itu URL gambar yang valid
+      const isValidImageUrl = /* Lakukan validasi di sini */ true;
+
+      if (isValidImageUrl) {
+        imagePath = imageUrl;
+      } else {
+        // Tangani kesalahan jika URL gambar tidak valid
+        res.status(400).send('URL gambar tidak valid.');
+        return;
+      }
+    }
+
     await Mobil.create({ name, price, category, images: imagePath });
-
-    // Tambahkan notifikasi di sini
     const notificationMessage = 'Data mobil berhasil ditambahkan!';
     
-    // Setelah menambahkan data, arahkan ke halaman daftar mobil
-    const mobilList = await Mobil.findAll();
-    res.render('list', { mobilList, notificationMessage });
+    res.redirect('/mobil?notificationMessage=' + encodeURIComponent(notificationMessage)); // Redirect ke /mobil dengan pesan notifikasi
+
   } catch (error) {
     console.error(error);
     res.status(500).send('Terjadi kesalahan dalam menambahkan data mobil.');
   }
 });
+
 
 // Rute untuk menampilkan halaman edit mobil
 app.get('/mobil/edit/:id', async (req, res) => {
@@ -90,6 +103,7 @@ app.get('/mobil/edit/:id', async (req, res) => {
 // Rute untuk menangani modifikasi data mobil
 app.post('/mobil/edit/:id', async (req, res) => {
   try {
+
     const id = req.params.id;
     const { name, price, category, images } = req.body;
     const mobil = await Mobil.findByPk(id);

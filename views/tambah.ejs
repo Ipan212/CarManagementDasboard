@@ -16,35 +16,73 @@
                 
               </div>
   
-  <form action="/mobil/tambah" method="POST" enctype="multipart/form-data" >
-    
-    <div class="mb-3 row">
-      <label for="name"  class="col-sm-2 col-form-label">Name :</label>
-      <div class="col-5 ">
-        <input type="text" class="form-control" id="name" name="name" required>
-      </div>
-    </div>
-    <div class="mb-3 row">
-      <label for="price"  class="col-sm-2 col-form-label">Harga :</label>
-      <div class="col-5 ">
-        <input type="number" class="form-control" id="price" name="price" required>
-      </div>
-    </div>
-     <div class="mb-3 row">
-      <label for="category"  class="col-sm-2 col-form-label">Category :</label>
-      <div class="col-5 ">
-        <input type="text" class="form-control" id="category" name="category" required>
-      </div>
-    </div>
-    
-    <div class="mb-3">
-        <label for="images" class="form-label">Gambar</label>
-        <input type="file" class="form-control" id="images" name="images" accept="image/*" required>
-      </div>
-      
-    <button class="btn btnAdd btn-primary btn-binar-primary" style="margin-right: 10px;" type="submit">Tambah Data</button>
-    <button class="btn btn-info  btn-binar-info" style="margin-right: 10px;" type="submit"><a href="/mobil">Kembali ke Daftar Mobil</a></button>
-  </form>
+              <form action="/mobil/tambah" method="post" enctype="multipart/form-data">
+                
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Name :</label>
+                  <div class="col-5 ">
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Harga :</label>
+                  <div class="col-5 ">
+                    <input type="text" class="form-control" id="price" name="price" required>
+                  </div>
+                </div>
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Category :</label>
+                  <div class="col-5 ">
+                    <input type="text" class="form-control" id="category" name="category" required>
+                  </div>
+                </div>
+              
+                <div class="mb-3 row">
+                  <label  class="col-sm-2 col-form-label">Type Gambar :</label>
+                <div class="col-5">
+                  <select class="form-select" aria-label="Default select example" 
+                  name="uploadType" id="uploadType" required>
+                    <option selected>Open this select menu</option>
+                    <option value="file">Upload File</option>
+                    <option value="url">Masukan URL Gambar</option>
+                  </select>
+                </div>
+                </div>
+              
+                <div class="mb-3 row" id="fileInput" style="display: none;">
+                  <div class="col-5">
+                  <label for="formFile" class="form-label">Default file input example</label>
+                  <input class="form-control" type="file" name="images" id="images">
+                </div>
+                </div>
+              
+                <div class="mb-3 row"  id="urlInput" style="display: none;">
+                  <label  class="col-sm-2 col-form-label">URL Gambar :</label>
+                  <div class="col-5 ">
+                    <input type="text" class="form-control" name="imageUrl" id="imageUrl">
+                  </div>
+                </div>
+                
+                <button type="submit" class="btn btn-outline-primary">Secondary</button>
+              </form>
+              
+  
+  <script>
+    document.getElementById('uploadType').addEventListener('change', function () {
+      const selectedOption = this.value;
+      const fileInput = document.getElementById('fileInput');
+      const urlInput = document.getElementById('urlInput');
+  
+      if (selectedOption === 'file') {
+        fileInput.style.display = 'block';
+        urlInput.style.display = 'none';
+      } else if (selectedOption === 'url') {
+        fileInput.style.display = 'none';
+        urlInput.style.display = 'block'; // Perhatikan bahwa ini harus 'display', tidak 'display'
+      }
+    });
+  </script>
   
 </body>
+
 </html>
