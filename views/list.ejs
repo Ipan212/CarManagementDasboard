@@ -15,10 +15,23 @@
       </a>
     </div>
     <% if (notificationMessage) { %>
-      <div class="alert alert-success">
+      <div class="alert alert-success" role="alert" id="notification">
         <%= notificationMessage %>
       </div>
+    
+      <script>
+        // Fungsi untuk menghilangkan notifikasi setelah beberapa detik
+        document.addEventListener('DOMContentLoaded', function() {
+          var notification = document.getElementById('notification');
+          if (notification) {
+            setTimeout(function() {
+              notification.style.display = 'none';
+            }, 3000); // Ganti 5000 dengan jumlah milidetik yang diinginkan (misal: 5000 untuk 5 detik)
+          }
+        });
+      </script>
     <% } %>
+    
 
     <div class="d-flex align-items-center gap-3 mt-3">
       <button type="button" class="btn btn-outline-secondary active" data-category="All">All</button>
@@ -82,48 +95,14 @@
   </div>
 </div>
 
-<!-- Modal Konfirmasi Penghapusan -->
-<div id="custom-notification" class="custom-notification">
-  <span id="notification-message"></span>
-  <button id="close-notification" class="close-notification">Tutup</button>
-</div>
-<!-- Add Bootstrap JavaScript and Popper.js (if needed) links -->
 <!-- Add Bootstrap JavaScript and Popper.js (if needed) links -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.min.js"></script>
 <script>
-  const customNotification = document.getElementById('custom-notification');
-  const notificationMessage = document.getElementById('notification-message');
-  const closeNotification = document.getElementById('close-notification');
   const filterButtons = document.querySelectorAll('[data-category]');
   const carsContainer = document.getElementById('cars-container');
-
-
-  // Fungsi untuk menampilkan notifikasi kustom
-  function showCustomNotification(message) {
-    notificationMessage.textContent = message;
-    customNotification.style.display = 'block';
-
-    // Menutup notifikasi otomatis setelah 5 detik (5000 milidetik)
-    setTimeout(hideCustomNotification, 5000);
-  }
-
-  // Fungsi untuk menyembunyikan notifikasi kustom
-  function hideCustomNotification() {
-    customNotification.style.display = 'none';
-  }
-
-  // Event listener untuk tombol penutup notifikasi
-  closeNotification.addEventListener('click', hideCustomNotification);
-
-  // Ambil pesan notifikasi dari elemen HTML jika ada
-  const initialNotificationMessage = notificationMessage.textContent;
-  if (initialNotificationMessage) {
-    showCustomNotification(initialNotificationMessage);
-    setTimeout(hideCustomNotification, 2000);
-  }
-
-  
+ 
+ 
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const selectedCategory = button.getAttribute('data-category');

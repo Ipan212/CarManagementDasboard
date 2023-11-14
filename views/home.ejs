@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendor/boostrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style/style.css">
+    <title>Binar Car</title>
+</head>
+<body>
+      <!--navbar cadangan-->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">BinarCar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" style="width: 12rem;" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Our Service</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Why Use</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Testimonial</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item Register">
+                  <a class="nav-link Reg" href="#">Register</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section class="Header container-fluid">
+        <div class="row align-items-center justify-content-between">
+          <div class="Header-Title col-lg-6">
+            <h1>Sewa & Rental Mobil Terbaik Di Kawasan Cikajang</h1>
+              <h4>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga 
+                terjangkau.
+                 Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.
+              </h4>
+              <div >
+                <a href="/mobil" class="btn-get-started">Get Started</a>
+              </div>
+          </div>
+          <div class="col-lg-6 Header-Img">
+            <img src="image/binar1.png" class="animated img-fluid "alt="mobil" style="width: 655; height: 400;">
+          </div>
+        </div>
+     </section>
+     <!-- and navbar-->
+      <!--our us-->
+      <section class="our-section " id="Service">
+        <div class="container ">
+            <div class="row align-items-center justify-content-between ">
+                <div class="col-md-5">
+                    <img src="image/binar2.png" class="our-img" alt="">
+                </div>
+                <div class="col-md-6 mb-xs-0">
+                    <h3 class="our-title display-8">
+                        Best Car Rental for any kind of trip in Cikajang
+                    </h3>
+                    <p>Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga lebih murah 
+                        dibandingkan yang lain, kondisi mobil baru, serta kualitas
+                         pelayanan terbaik untuk perjalanan wisata, bisnis, wedding, meeting, dll.</p>
+                    <a href="#" class="our-us d-inline-flex align-items-center gap-2 color-black">
+                     <i class="bx bx-check fs-4"></i>Sewa Mobil Dengan Supir di Bali 12 Jam
+                    </a><br>
+                    <a href="#" class="our-us d-inline-flex align-items-center gap-2">
+                        <i class="bx bx-check fs-4"></i>Sewa Mobil Lepas Kunci di Bali 24 Jam
+                    </a><br>
+                    <a href="#" class="our-us d-inline-flex align-items-center gap-2">
+                        <i class="bx bx-check fs-4"></i>Sewa Mobil Jangka Panjang Bulanan
+                    </a>
+                    <a href="#" class="our-us d-inline-flex align-items-center gap-2">
+                        <i class="bx bx-check fs-4"></i>Gratis Antar - Jemput Mobil di Bandara
+                    </a>
+                    <a href="#" class="our-us d-inline-flex align-items-center gap-2">
+                        <i class="bx bx-check fs-4"></i>Layanan Airport Transfer / Drop In Out
+                    </a>
+                </div>
+            </div>
+        </div>
+      </section>
+      <!--And Our Us-->
+      <!--Start Why Us-->
+      <section id="why">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 >Why Use</h2>
+                    <h4 class="display-8">Mengapa Harus Pilih Binar Car..?</h4>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center" id>
+               <div class="col-xl-3 col-lg-4 col-md-6 mb-3 ">
+                <div class="card" style=" height: 15em;">
+                    <img id="img-list" src="image/like.png" alt="">
+                    <div class="card-body">
+                        <h5>Mobil Lengkap</h5>
+                      <p class="card-text">Tersedia banyak pilihan mobil, kondisi masih baru, bersih dan terawat
+ 
+                      </p>
+                    </div>
+                  </div>
+               </div> 
+               <div class="col-xl-3 col-lg-4 col-md-6 mb-3 ">
+                <div class="card" style="height: 15em;">
+                    <img id="img-list" src="image/tag.png" alt="">
+                    <div class="card-body">
+                        <h5>Harga Murah</h5>
+                      <p class="card-text">Harga murah dan bersaing, bisa bandingkan harga kami dengan rental mobil lain</p>
+                    </div>
+                  </div>
+               </div> 
+               <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                <div class="card" style="height: 15em;">
+                    <img id="img-list" src="image/clock.png" alt="">
+                    <div class="card-body">
+                      <h5>Layanan 24</h5>
+                      <p class="card-text">Siap melayani kebutuhan Anda selama 24 jam nonstop. Kami juga tersedia di akhir minggu</p>
+                    </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 mb-3">
+                <div class="card" style="height: 15em;">
+                    <img id="img-list" src="image/medal.png" alt="">
+                    <div class="card-body">
+                      <h5>Sopir Profesional</h5>
+                      <p class="card-text">Sopir yang profesional, berpengalaman, jujur, ramah dan selalu tepat waktu</p>
+                    </div>
+                  </div>
+               </div> 
+            </div>
+        </div>
+      </section>
+            <!--Testimonial-->
+            <section class="testimonial-section" id="testimonial">
+              <div class="container-fluid ">
+                <div class="timoni ms-4 ">
+                  <h2 class="display-6">Testimonials</h2>
+                  <p>Berbagai review positif dari para pelanggan kami</p>
+                </div>
+                   <div class="swiper testimonial-swiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="card-body d-flex justify-content-between">
+                          <img src="image/testimonials-1.jpg" alt="" class="card-img-top  mt-4">
+                          <div class="tulisan">
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla exercitationem ab quia 
+                            doloribus, error corrupti. Corporis perferendis 
+                            praesentium magni amet possimus suscipit quasi. Quo, facere nostrum. Non tempore debitis vitae.</p>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card-body d-flex justify-content-between">
+                          <img src="image/testimonials-2.jpg" alt="" class="card-img-top mt-4">
+                          <div class="tulisan">
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla exercitationem ab quia 
+                              doloribus, error corrupti. Corporis perferendis 
+                              praesentium magni amet possimus suscipit quasi. Quo, facere nostrum. Non tempore debitis vitae.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card-body d-flex justify-content-between">
+                          <img src="image/testimonials-3.jpg" alt="" class="card-img-top  mt-4">
+                          <div class="tulisan">
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla exercitationem ab quia 
+                              doloribus, error corrupti. Corporis perferendis 
+                              praesentium magni amet possimus suscipit quasi. Quo, facere nostrum. Non tempore debitis vitae.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card-body d-flex">
+                          <img src="image/testimonials-4.jpg" alt="" class="card-img-top  mt-4">
+                          <div class="tulisan">
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla exercitationem ab quia 
+                              doloribus, error corrupti. Corporis perferendis 
+                              praesentium magni amet possimus suscipit quasi. Quo, facere nostrum. Non tempore debitis vitae.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="card-body d-flex justify-content-between">
+                          <img src="image/testimonials-5.jpg" alt="" class="card-img-top  mt-4">
+                          <div class="tulisan">
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <i class="bx bxs-star fs-5"></i>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla exercitationem ab quia 
+                              doloribus, error corrupti. Corporis perferendis 
+                              praesentium magni amet possimus suscipit quasi. Quo, facere nostrum. Non tempore debitis vitae.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center gap-3 mt-3">
+                      <button class="button-n btn btn-light d-flex align-items-center justify-content-center button-prev"
+                      style="font-weight: 300;">
+                        <i class="bx bx-chevron-left fs-8"></i>
+                      </button>
+                      <button class="button-n btn-light d-flex align-items-center justify-content-center button-next">
+                        <i class="bx bx-chevron-right fs-8"></i>
+                      </button>
+                    </div>
+                   </div>
+               </div>
+              </section>
+              <!--End Testtimonial-->
+      <!--FAQ-->
+      <section id="cta" class="cta">
+        <div class="container">
+  
+          <div class="text-center ">
+            <h3>Sewa Mobil di Cikajang Sekarang</h3>
+            <p>Jangan Ragu Dan Jangan Bimbang Sewa Mobil Untuk Perjalananmu Sekarang Juga...1</p>
+            <a class="cta-btn" href="/mobil">Mulai Sewa Mobil</a>
+          </div>
+  
+        </div>
+      </section>
+      <!--AND FAQ-->   
+      <!--Question-->
+      <section class="question">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <h4>Frequently Asked Question</h4>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+            <div class="col-lg-6 col-md-6 ms-0 ">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item mb-2">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Apa saja syarat yang dibutuhkan?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt ratione excepturi minus quasi quos quo ut laboriosam ex libero? Eligendi,
+                       libero id. Hic corporis eius quisquam nesciunt non similique magnam!
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-2">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      ABerapa hari minimal sewa mobil lepas kunci?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium officia nobis 
+                      quo officiis nulla iusto adipisci facilis magnam nihil obcaecati recusandae animi temporibus
+                       possimus, eum numquam! Nam, quo distinctio.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-2">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Berapa hari sebelumnya sabaiknya booking sewa mobil?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium officia nobis 
+                      quo officiis nulla iusto adipisci facilis magnam nihil obcaecati recusandae animi temporibus
+                       possimus, eum numquam! Nam, quo distinctio.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-2">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Apakah Ada biaya antar-jemput?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium officia nobis 
+                      quo officiis nulla iusto adipisci facilis magnam nihil obcaecati recusandae animi temporibus
+                       possimus, eum numquam! Nam, quo distinctio.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item mb-2">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFife" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Bagaimana jika terjadi kecelakaan?
+                    </button>
+                  </h2>
+                  <div id="flush-collapseFife" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente laudantium officia nobis 
+                      quo officiis nulla iusto adipisci facilis magnam nihil obcaecati recusandae animi temporibus
+                       possimus, eum numquam! Nam, quo distinctio.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--And Question-->
+      <!--footer-->
+      <section class="footer">
+        <div class="container">
+          <div class="row d-flex justify-content-start">
+            <div class="col-lg-3 col-md-6 text-start ">
+              <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+              <p>binarcarrental@gmail.com</p>
+              <p>Jalan Suroyo No. 161 Mayangan Kota Probolonggo 672000</p>
+            </div>
+            <div class="col-lg-3 col-md-6">
+            <p>Our Services</p>
+            <p>Why Us</p>
+            <p>Testimonial</p>
+            <p>FAQ</p>
+          </div>
+            <div class="col-lg-3 col-md-6 text-start" id="iconFaq">
+              <i class="bx bxl-facebook fs-4"></i>
+              <i class="bx bxl-instagram fs-4"></i>
+              <i class="bx bxl-twitter fs-4"></i>
+              <i class="bx bx-envelope fs-4"></i>
+              <i class="bx bxl-twitch fs-4"></i>
+            </div>
+            <div class="col-lg-3 col-md-6 text-start">
+              <P class="mt-2">Copyright Binar 2022</P>
+              <h5 class="text-start">BinarCar</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--and footer-->
+    <script src="vendor/boostrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>    
+    <script>
+        var swiper = new Swiper(".testimonial-swiper", 
+        {
+          slidesPerView: 1.5,
+          centeredSlides: true,
+          spaceBetween: 24,  
+          loop: true,       
+          navigation: {
+          nextEl: ".button-next",
+          prevEl: ".button-prev",
+        },
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+        breakpoints: {
+      // when window width is >= 2000px
+      100: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 480px
+      789: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      // when window width is >= 640px
+      790: {
+        slidesPerView: 1.5,
+        spaceBetween: 30
+      }
+    }
+        });
+      </script>
+</body>
+</html>

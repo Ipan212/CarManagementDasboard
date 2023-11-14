@@ -33,6 +33,17 @@ const { Mobil } = require('./models');
 
 // Rute untuk menampilkan daftar mobil
 
+
+
+app.get('/', async (req , res) =>{
+  try {
+    res.render('home')
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Terjadi kesalahan dalam menampilkan halaman Home.');
+ 
+  }
+})
 app.get('/mobil', async (req, res) => {
   try {
     const mobilList = await Mobil.findAll();
@@ -74,9 +85,7 @@ app.post('/mobil/tambah', upload.single('images'), async (req, res) => {
 
     await Mobil.create({ name, price, category, images: imagePath });
     const notificationMessage = 'Data mobil berhasil ditambahkan!';
-    
-    res.redirect('/mobil?notificationMessage=' + encodeURIComponent(notificationMessage)); // Redirect ke /mobil dengan pesan notifikasi
-
+    res.redirect('/mobil?notificationMessage=' + encodeURIComponent(notificationMessage));
   } catch (error) {
     console.error(error);
     res.status(500).send('Terjadi kesalahan dalam menambahkan data mobil.');
@@ -131,7 +140,7 @@ app.get('/mobil/hapus/:id', async (req, res) => {
     if (mobil) {
       await mobil.destroy();
       const notificationMessage = 'Data mobil berhasil dihapus!';
-      res.redirect('/mobil?notificationMessage=' + encodeURIComponent(notificationMessage)); // Redirect ke /mobil dengan pesan notifikasi
+      res.redirect('/mobil?notificationMessage=' + encodeURIComponent(notificationMessage));
     } else {
       res.status(404).send('Data mobil tidak ditemukan.');
     }
